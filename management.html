@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <!-- Hacker icon attribution <a href="https://www.flaticon.com/free-icons/scammer" title="scammer icons">Scammer icons created by Andrean Prabowo - Flaticon</a> -->
+    <style>
+        .tubeLight {
+            font-family: "Neonblitz", sans-serif;
+            color: #fff;
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #0fa,
+                0 0 82px #0fa,
+                0 0 92px #0fa,
+                0 0 102px #0fa,
+                0 0 151px #0fa;
+            font-size: 3rem;
+            border: 0.2rem solid #fff;
+            border-radius: 2rem;
+            padding: 0.4em;
+            box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #0fa,
+                0 0 0.8rem #0fa,
+                0 0 2.8rem #0fa,
+                inset 0 0 1.3rem #0fa;
+
+        }
+
+        .main {
+            position: absolute;
+            top: 51px;
+            min-height: calc(100vh - 51px);
+            width: 100%;
+            height: fit-content;
+            display: grid;
+            grid-template-rows: 12.5rem 1fr;
+            align-items: center;
+            justify-items: center;
+            gap: 50px;
+        }
+
+        .main a {
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        @media only screen and (max-width:880px) {
+            .tubeLight {
+                font-size: 2rem;
+                text-shadow:
+                    0 0 7px #fff,
+                    0 0 5px #fff,
+                    0 0 16px #fff,
+                    0 0 37px #0fa,
+                    0 0 77px #0fa,
+                    0 0 87px #0fa;
+                box-shadow: 0 0 .1rem #fff,
+                    0 0 .1rem #fff,
+                    0 0 1.5rem #0fa,
+                    0 0 0.5rem #0fa,
+                    0 0 2.2rem #0fa,
+                    inset 0 0 1rem #0fa;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+            .tubeLight {
+                font-size: max(calc(100vw * 0.05 + 0rem), 1.6rem);
+                padding: 0.4rem;
+            }
+        }
+
+        @media only screen and (max-width:260px) {
+            .tubeLight {
+                font-size: 0.8rem;
+                padding: 0.4rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a class='navbar-brand' href='https://lugvitc.github.io'>LINUX CLUB VITC</a>
+            <div class="nav-options">
+                <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="technical.html">Technical</a>
+                <a class="nav-link" href="management.html">Management</a>
+                <a class="nav-link" href="operations.html">Operations</a>
+                <a class="nav-link" href="media.html">Media</a>
+                <a class="nav-link" href="content.html">Content</a>
+            </div>
+            <svg id=three-bars xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </div>
+    <div class="main">
+        <div class="tubeLight">Management Team</div>
+        <div id="cards-grid"></div>
+    </div>
+    <script src="confetti.js"></script>  
+    <script>
+        startConfetti();
+    </script>
+</body>
+<script>
+    let bars = document.querySelector("#three-bars");
+    var bars_opened = false;
+    bars.addEventListener("click", () => {
+        document.querySelector(".nav-options").style.height = !bars_opened ? "240px" : "0px";
+        bars_opened = !bars_opened;
+    })
+    window.addEventListener("resize", () => {
+        if (document.body.offsetWidth >= 990) {
+            document.querySelector(".nav-options").style.height = "fit-content";
+        }
+        else {
+            if (document.querySelector(".nav-options").style.height == "fit-content") {
+                document.querySelector(".nav-options").style.height = "0px";
+            }
+        }
+    })
+
+// Details of the participants
+
+    var content = {
+        "20BRS1111": {
+            "name": "Kavya Paliwal",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	 "21BEC1322": {
+            "name": "Priyanga k",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE1805": {
+            "name": "SUNKISHALA MANISH ",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BEC1236": {
+            "name": "Vishal R",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE1868": {
+	"name": "Sai Chakrin",
+	"photo": "path/to/image",
+	"department": "Management"
+	},
+	"21BAI1725": {
+            "name": "Syam Krishna Reddy",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE1457": {
+            "name": "Aditya yadav",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"20BCE1815": {
+            "name": "Rokithkumar",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE5976": {
+            "name": "G.Tanmayi",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BPS1384": {
+            "name": "Alapati Hemalatha",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE1411": {
+            "name": "Diksha Banik",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE1094": {
+            "name": "Agniv Ganguly",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE5755": {
+            "name": "Parul Tiwari",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE5458": {
+            "name": "Shanmugha Priyan SK",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE6059": {
+            "name": "Josiga S",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BPS1208": {
+            "name": "Rohit Kumar Nonia",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE1905": {
+            "name": "S ARUN SOURI",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE5310": {
+            "name": "Nahid shameem",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE5868": {
+            "name": "Sathvik Katuru",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BCE5922": {
+            "name": "Tangudu suraj kumar",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BRS1038": {
+            "name": "Nishanth Chowdhary",
+            "photo": "path/to/image",
+            "department": "Management"
+        },
+	"21BPS1386": {
+            "name": "Bellamkonda Raghu",
+            "photo": "path/to/image",
+            "department": "Management"
+        }, 
+	"21BRS1540": {
+            "name": "VARUN KUMAR",
+            "photo": "path/to/image",
+            "department": "Management"
+        }
+}
+
+// Generating cards
+
+    for (const participant_reg_no in content) {
+        if (Object.hasOwnProperty.call(content, participant_reg_no)) {
+            const participant = content[participant_reg_no];
+
+            let div = document.createElement("div");
+            let div_front = document.createElement("div");
+            let div_back = document.createElement("div");
+            let div_signal = document.createElement("div");
+            div.setAttribute("class", "card");
+            div_signal.setAttribute("class", "card_signal")
+            div_front.setAttribute("class", "card_front");
+            div_back.setAttribute("class", "card_back");
+
+            div.onclick = (e) => {
+                console.log(participant);
+            }
+            div_front.innerHTML = `
+            <img class="hacker" src="res/hacker_black.png">
+            <span class="real-name">${participant.name}</span>
+            <span class="real-reg">${participant_reg_no}</span>
+            <span class="real-depart">${participant.department}</span>
+            `
+            div_back.innerHTML = `
+            <img class="real-pic" src="${participant.photo}">
+            <span class="real-name">${participant.name}</span>
+            <span class="real-reg">${participant_reg_no}</span>
+            <span class="real-depart">${participant.department}</span>
+            `
+            div_signal.appendChild(div_front);
+            div_signal.appendChild(div_back);
+            div.appendChild(div_signal);
+            document.getElementById("cards-grid").appendChild(div);
+        }
+    }
+
+</script>
+
+</html>
